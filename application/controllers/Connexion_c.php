@@ -8,6 +8,8 @@ class Connexion_c extends MY_Controller {
 	}
 	
 	public function index(){
+		$data['content'] = 'pages/connexion_v';
+		$this->generer_affichage($data);
 	}
 	
 }

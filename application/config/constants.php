@@ -36,6 +36,16 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+|--------------------------------------------------------------------------
+| Assets configuration
+|--------------------------------------------------------------------------
+|
+| These modes are for an easy Assets path definition.
+|
+*/
+define('ASSETS','http://localhost/AppliCR/assets/');
+define('IMG', ASSETS.'img/');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
