@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+/*----- Général -----*/
+
+html, body {
+	
+}
+
+.erreur {
+	color: #FF0000;
+}
+
+/*----- mainTemplate -----*/
+	/*----- Head -----*/
+
+#entete {
+	display: inline;
+	color : #5599EE;
+}
+#entete img {
+	width: 100px;
+	height: 60px;
+}
+
+/*----- Pages -----*/
+	/*----- Connexion_v -----*/
+
+#bloc-connexion {
+	/*Bloc*/
+	width: 500px;
+	margin: auto;
+	background-color: #77AADD;
+	padding: 5px 0 25px 0;
+	/*Texte*/
+	color: #FFF;
+	text-align: center;
+}
+#bloc-connexion input { 
+	width: 180px;
+}
+#bloc-connexion input[type=submit] {
+	margin-top: 10px;
+	width:100px
+}
