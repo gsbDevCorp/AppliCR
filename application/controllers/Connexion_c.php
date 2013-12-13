@@ -22,10 +22,10 @@ class Connexion_c extends MY_Controller {
 	 */
 	public function valider() {
 		
-		//-- VÃ©rification des champs
+		//-- Vérification des champs
 		$this->form_validation->set_rules('identifiant', 'Identifiant', 'required');
 		$this->form_validation->set_rules('mdp', 'Mot de passe', 'required');
-		$this->form_validation->set_message('required', 'Le champ "%s" doit Ãªtre renseignÃ©.');
+		$this->form_validation->set_message('required', 'Le champ "%s" doit être renseigné.');
 		
 		if ($this->form_validation->run() == FALSE) {
 			//-- Affichage des erreurs
@@ -34,20 +34,13 @@ class Connexion_c extends MY_Controller {
 			$this->generer_affichage($data);
 		}
 		else {
-			//-- VÃ©rification des informations
-			/*
-			 * CrÃ©ation de la BDD Ã  faire.
-			 */
-			$data['erreurCombinaison'] = true;//fonctionModele($this->input->post('identifiant'),$this->input->post('mdp'));
+			//-- Vérification des informations
+			$data['erreurCombinaison'] = $this->Visiteur_m->connexion($this->input->post('identifiant'),dateToEN($this->input->post('mdp')));
 			
 			if (!$data['erreurCombinaison']) {
-				//-- CrÃ©ation de la session et redirection
-				$session = array(
-					'vis_matricule' => 'MATRICULE',
-					'vis_nom' => 'NOM',
-					'vis_prenom' => 'PRENOM'
-				);
-				$this->session->set_userdata($session);
+				//-- Création de la session et redirection
+				$visiteur = $this->Visiteur_m->getVisiteur($this->input->post('identifiant'));
+				$this->session->set_userdata('visiteur', $visiteur);
 				redirect('rapport_visite_c', 'refresh');
 			}
 			else {
@@ -60,7 +53,7 @@ class Connexion_c extends MY_Controller {
 	}
 	
 	/**
-	 * Suppression des donnÃ©es de session de l'utilisateur
+	 * Suppression des données de session de l'utilisateur
 	 */
 	public function deconnexion() {
 		$this->session->sess_destroy();
