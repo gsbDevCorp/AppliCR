@@ -66,3 +66,24 @@ html, body {
 	width:100px
 }
 	/*----- consulterRapports_v -----*/
+	
+#consulter_rapport {
+	padding-bottom: 40px;
+}
+#resultats_rapports td {
+	padding: 5px 10px;
+}
+#resultats_rapports td a {
+	color: #FFF;
+	text-decoration: none;
+}
+#resultats_rapports td a:hover {
+	text-decoration: underline;
+}
+#resultats_rapports .lien_rapport {
+	border-right: 1px dashed #FFF;
+}
+#resultats_rapports .infos_rapport {
+	color: #5599EE;
+	background-color: #FFF;
+}

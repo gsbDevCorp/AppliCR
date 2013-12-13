@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Classe d'accès aux données des visiteurs
+ * Classe d'accÃ¨s aux donnÃ©es des visiteurs
  */
 class Visiteur_m extends CI_Model {
 
@@ -10,7 +10,7 @@ class Visiteur_m extends CI_Model {
 	}
 
 	/**
-	 * Vérification des identifiants de connexion du visiteur
+	 * VÃ©rification des identifiants de connexion du visiteur
 	 * 
 	 * @param String $vis_matricule
 	 * @param date $vis_dateEmbauche
@@ -20,14 +20,14 @@ class Visiteur_m extends CI_Model {
 		$this->db->where('vis_nom', $vis_nom);
 		$this->db->where('vis_dateembauche', $vis_dateEmbauche);
 		$query = $this->db->get('visiteur');
-		//Compte le nombre de ligne récupérés par la BDD
+		//Compte le nombre de ligne rï¿½cupï¿½rï¿½s par la BDD
 		if ($query->num_rows() > 0)
 			return false;
 		return true;
 	}
 	
 	/**
-	 * Retourne un visiteur à partir de son matricule
+	 * Retourne un visiteur Ã  partir de son matricule
 	 */
 	public function getVisiteur($vis_nom) {
 		$this->db->where('vis_nom', $vis_nom);

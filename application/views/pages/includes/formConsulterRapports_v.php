@@ -5,13 +5,14 @@
 	$dataForm['dateDebut'] = array(
 			'name' => 'dateDebut',
 			'id' => 'dateDebut',
-			'placeholder' => 'jj/mm/aaa',
+			'placeholder' => 'jj/mm/aaaa',
 			'value' => set_value('dateDebut')
 	);
 	$dataForm['dateFin'] = array(
-			'name' => 'mdp',
-			'id' => 'mdp',
-			'value' => set_value('dateDebut')
+			'name' => 'dateFin',
+			'id' => 'dateFin',
+			'placeholder' => 'jj/mm/aaaa',
+			'value' => set_value('dateFin')
 	);
 	$dataForm['submit'] = array(
 			'name' => 'sendForm',
@@ -21,15 +22,14 @@
 
 //----- Affichage du formulaire
 
-	echo form_open("connexion_c/valider");
+	echo form_open("rapport_visite_c/rechercher");
 	//-- Gestion des erreurs
-	echo validation_errors('<div class="erreur">', '</div>').br();
-	if (isset($erreurCombinaison) && $erreurCombinaison)
-		echo '<div class="erreur">Erreur dans la combinaison Identifiant / Mot de passe.</div>'.br();
+	if (isset($erreurDate) && $erreurDate)
+		echo '<div class="erreur">Erreur dans le format des dates.</div>'.br();
 	//-- Formulaire
-	echo form_label('DU :','dateDebut');
+	echo form_label('DU : ','dateDebut');
 	echo form_input($dataForm['dateDebut']);
-	echo form_label('AU :','dateFin');
+	echo form_label('AU : ','dateFin');
 	echo form_input($dataForm['dateFin']);
 	echo form_submit($dataForm['submit']);
 	form_close();
