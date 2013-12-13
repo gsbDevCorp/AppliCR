@@ -87,3 +87,20 @@ html, body {
 	color: #5599EE;
 	background-color: #FFF;
 }
+	
+	/*----- afficherRapport_v -----*/
+
+#afficher_rapport {
+	
+}
+.titre {
+	width : 180px;
+	display: block;
+	float:left;
+	margin-left: 5px;
+}
+.valeur_detail {
+	color: #5599EE;
+	padding: 0 10px;
+	background-color: #FFF;
+}
