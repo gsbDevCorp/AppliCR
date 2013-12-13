@@ -1,0 +1,1 @@
+<h1>Nouveau rapport de visite</h1>

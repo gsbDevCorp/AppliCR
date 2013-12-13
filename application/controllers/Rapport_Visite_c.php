@@ -5,6 +5,7 @@ class Rapport_Visite_c extends MY_Controller {
 	
 	public function __construct(){
 		parent::__construct();
+		$this->verifier_session();
 	}
 	
 	/**
@@ -13,6 +14,15 @@ class Rapport_Visite_c extends MY_Controller {
 	public function index(){
 		$data['title'] = 'Consulter les rapports de visite';
 		$data['content'] = 'pages/consulterRapports_v';
+		$this->generer_affichage($data);
+	}
+	
+	/**
+	 * Création d'un nouveau rapport de visite.
+	 */
+	public function nouveau() {
+		$data['title'] = 'Nouveau rapport de visite';
+		$data['content'] = 'pages/nouveauRapport_v';
 		$this->generer_affichage($data);
 	}
 }
