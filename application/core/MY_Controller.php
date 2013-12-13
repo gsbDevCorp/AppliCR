@@ -3,10 +3,6 @@
 class MY_Controller extends CI_Controller {
 	function __construct() {
 		parent::__construct();
-		
-		//On verifie si l'utilisateur est connecté
-		if(!$this->session->userdata('')) //à modifier
-			redirect("connexion_c",'refresh');
 	}
 	
 	//On genere l'affichage
