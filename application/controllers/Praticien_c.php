@@ -10,13 +10,7 @@ class Praticien_c extends MY_Controller{
 	}
 	
 	public function index(){
-		//Initialisation des variables
-		$idPraticien = $this->session->userdata('pra_num');
 		
-		//Appel de l'initialisation de la vue
-		$this->initVue($idPraticien);
-		
-		$this->generer_affichage($data);
 	}
 	
 	public function afficher(){
@@ -28,4 +22,4 @@ class Praticien_c extends MY_Controller{
 
 
 /* End of file EtatFrais.php */
-/* Location: ./application/controllers/Medicament_c.php */
+/* Location: ./application/controllers/Particien_c.php */
