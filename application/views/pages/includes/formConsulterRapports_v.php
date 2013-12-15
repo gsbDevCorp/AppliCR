@@ -5,13 +5,13 @@
 	$dataForm['dateDebut'] = array(
 			'name' => 'dateDebut',
 			'id' => 'dateDebut',
-			'placeholder' => 'jj/mm/aaaa',
+			'placeholder' => 'jj-mm-aaaa',
 			'value' => set_value('dateDebut')
 	);
 	$dataForm['dateFin'] = array(
 			'name' => 'dateFin',
 			'id' => 'dateFin',
-			'placeholder' => 'jj/mm/aaaa',
+			'placeholder' => 'jj-mm-aaaa',
 			'value' => set_value('dateFin')
 	);
 	$dataForm['submit'] = array(

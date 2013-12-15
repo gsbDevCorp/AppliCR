@@ -18,6 +18,5 @@ function dateToEN($dateAppliCR) {
  * Vérifie que la date est bien au format jj/mm/aaaa 
  */
 function verifierFormatDate($date) {
-	//return preg_match('#^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$#', $date);
 	return preg_match('#^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$#', $date);
 }

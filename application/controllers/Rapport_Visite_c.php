@@ -34,13 +34,22 @@ class Rapport_Visite_c extends MY_Controller {
 		//-- Attributs
 		$dateDebut = dateToEN($this->input->post('dateDebut'));
 		$dateFin = dateToEN($this->input->post('dateFin'));
+		//-- Vérification de la complétion
+		$this->form_validation->set_rules('dateDebut', 'Date début', 'required');
+		$this->form_validation->set_rules('dateFin', 'Date fin', 'required');
+		
 		//-- Vérification du format des dates.
-		if (!verifierFormatDate($dateDebut) || !verifierFormatDate($dateFin)) {
+		if (!verifierFormatDate($dateDebut) || !verifierFormatDate($dateFin) || strtotime($dateDebut) > strtotime($dateFin)) {
 			$data['erreurDate'] = true;
 			$data['rapports'] = $this->Rapport_Visite_m->getRapportsVisiteur($this->session->userdata('vis_matricule'));
 		}
-		else
-			$data['rapports'] = $this->Rapport_Visite_m->getRapportsLimites($this->session->userdata('vis_matricule'), $dateDebut, $dateFin);
+		else {
+			//-- Gestion de la complétion partielle du formulaire
+			if ($this->form_validation->run() == FALSE)
+				$data['rapports'] = $this->Rapport_Visite_m->getRapportsVisiteur($this->session->userdata('vis_matricule'));
+			else
+				$data['rapports'] = $this->Rapport_Visite_m->getRapportsLimites($this->session->userdata('vis_matricule'), $dateDebut, $dateFin);
+		}
 		
 		//-- Génération de l'affichage.
 		$data['title'] = 'Consulter les rapports de visite';
