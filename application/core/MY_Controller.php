@@ -6,7 +6,7 @@ class MY_Controller extends CI_Controller {
 	}
 	
 	/**
-	 * Vérification de la présence de donnée sde session
+	 * VÃ©rification de la prÃ©sence de donnÃ©e de session
 	 * @return boolean
 	 */
 	private function est_connecte() {

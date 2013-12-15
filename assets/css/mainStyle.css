@@ -90,8 +90,15 @@ html, body {
 	
 	/*----- afficherRapport_v -----*/
 
-#afficher_rapport {
-	
+#afficher_rapport a {
+	color: #FFF;
+	text-decoration: none;
+}
+#afficher_rapport ul {
+	list-style-type: none;
+}
+#afficher_rapport ul li {
+	margin: 10px 0 10px 0;
 }
 .titre {
 	width : 180px;
