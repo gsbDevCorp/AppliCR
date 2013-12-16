@@ -5,7 +5,6 @@
 html, body {
 	
 }
-
 .erreur {
 	color: #FF0000;
 }
@@ -43,7 +42,7 @@ html, body {
 	background-color: #77AADD;
 	padding-left: 5px;
 	margin : 10px 2px 2px 2px;
-	color:white;
+	color: #FFF;
 }
 
 	/*----- Connexion_v -----*/
@@ -99,6 +98,17 @@ html, body {
 }
 #afficher_rapport ul li {
 	margin: 10px 0 10px 0;
+}
+#afficher_rapport ul li ul {
+	list-style-type: circle;
+	margin-left: 185px;
+	margin-top: 0px;
+	color: #5599EE;
+	padding-left: 20px;
+	background-color: #FFF;
+}
+#afficher_rapport ul li ul li {
+	margin: 0px;
 }
 .titre {
 	width : 180px;

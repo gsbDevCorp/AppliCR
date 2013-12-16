@@ -57,9 +57,40 @@ class Rapport_Visite_c extends MY_Controller {
 		$this->generer_affichage($data);
 	}
 	
+	/**
+	 * Affichage du rapport de visite sélectionné par l'utilisateur.
+	 */
 	public function afficher() {
+		//-- Récupération des informations du rapport
 		$data['rapports'] = $this->Rapport_Visite_m->getRapportByCode($this->session->userdata('vis_matricule'), $this->uri->segment(3));
-		$data['title'] = ' Rapport de visite n°';
+		
+		//-- Récupération des informations du praticien titulaire
+		foreach ($data['rapports']->result_array() as $rapport) {
+			$data['praticiens'] = $this->Praticien_m->getInfosPraticien($rapport['pra_num']);
+		}
+		
+		//-- Récupérations des informations du remplacant
+		foreach($data['praticiens']->result_array() as $praticien) {
+			$data['remplacants'] = $this->Praticien_m->getInfosRemplacant($rapport['rap_num']);
+		}
+		if($data['remplacants']->num_rows() > 0) {
+			foreach($data['remplacants']->result_array() as $remplacant) {
+				$data['remplacant'] = $this->Praticien_m->getInfosPraticien($remplacant['pra_num']);
+			}
+			$data['remplacants'] = true;
+		}
+		else 
+			$data['remplacants'] = false;
+		
+		//-- Récupération des médicaments présentés lors de la visite
+		foreach($this->Medicament_m->getMedPresentes($rapport['rap_num'])->result_array() as $element) {
+			//$medicament = $this->
+			$data['elemPresentes'] += $element['med_depotlegal'];
+		}
+		
+		
+		//-- Génération de l'affichage
+		$data['title'] = ' Rapport de visite n°'.$this->uri->segment(3);
 		$data['content'] = 'pages/afficherRapport_v';
 		$this->generer_affichage($data);
 	}

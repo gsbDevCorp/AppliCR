@@ -29,7 +29,7 @@
 	//-- Formulaire
 	echo form_label('DU : ','dateDebut');
 	echo form_input($dataForm['dateDebut']);
-	echo form_label('AU : ','dateFin');
+	echo form_label(' AU : ','dateFin');
 	echo form_input($dataForm['dateFin']);
 	echo form_submit($dataForm['submit']);
 	form_close();
