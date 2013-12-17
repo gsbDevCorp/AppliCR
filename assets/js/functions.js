@@ -11,8 +11,7 @@ function selectionne(pValeur, pSelection, pObjet) {
 /**
 * Active l'input d'autre motif
 */
-function autreMotif(motif) {
-	alert(motif);
+function ajouterMotif() {
 	if (motif == 5)
 		document.getElementById('autreMotif').disabled = false;
 	else

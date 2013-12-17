@@ -82,7 +82,8 @@
 	$dataForm['submit'] = array(
 			'name' => 'sendForm',
 			'id' => 'sendForm',
-			'value' => 'Valider'
+			'value' => 'Valider',
+			'disabled' => 'disabled'
 	);
 
 //----- Affichage du formulaire
@@ -108,7 +109,7 @@
 	echo form_dropdown('remplacants', $dataForm['remplacants'], '-1','disabled="true", id="remplacants"').br();
 		//-- Motifs, Bilan
 	echo form_label('MOTIF<span class="champsRequis">*</span> :', 'motifs');
-	echo form_dropdown('motifs', $dataForm['motifs'], '-1', 'onChange="autreMotif(\'this.value\');"');
+	echo form_dropdown('motifs', $dataForm['motifs'], '-1', 'onChange="ajouterMotif(this.value);"');
 	echo form_input($dataForm['autreMotif']).br();
 	echo form_label('BILAN<span class="champsRequis">*</span> :', 'bilan');
 	echo form_textarea($dataForm['bilan']).br();
