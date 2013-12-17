@@ -19,3 +19,10 @@ function ajouterMotif(motif) {
 		document.getElementById('autreMotif').disabled = true;
 	}
 }
+
+/**
+* Ajouter un échantillon sur un nouveau rapport
+*/
+function ajouterEchantillon() {
+	alert('ajouter');
+}

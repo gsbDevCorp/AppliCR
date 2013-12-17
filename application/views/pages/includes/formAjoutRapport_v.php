@@ -126,7 +126,7 @@
 	echo form_label('PRODUIT :', 'echantillon');
 	echo form_dropdown('echantillon', $dataForm['produits'], '-1');
 	echo form_input($dataForm['qteEchantillon']);
-	echo form_button('addEchantillon', '+').br().br();
+	echo form_button('addEchantillon', '+', 'onClick="ajouterEchantillon();"').br().br();
 	
 		//-- Boutons
 	echo '<span class="champsRequis">*</span> : champs requis'.br().br();
