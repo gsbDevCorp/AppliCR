@@ -1,3 +1,3 @@
-<div id="bloc-medicament">
-	<h1> Medicament </h1>
+<div id="bloc_medicament" class="contenu">
+	<h1> Médicaments </h1>
 </div>

@@ -30,7 +30,6 @@ class Visiteur_c extends MY_Controller {
 	 */
 	private function generer_affichage_visiteur($data) {
 		$data['visiteurs'] = $this->Visiteur_m->getListeVisiteurs();
-		
 		$data['title'] = 'Visiteurs';
 		$data['content'] = 'pages/visiteur_v';
 		$this->generer_affichage($data);

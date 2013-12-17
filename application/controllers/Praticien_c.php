@@ -10,12 +10,24 @@ class Praticien_c extends MY_Controller{
 	}
 	
 	public function index(){
-		
+// 		$data['title'] = 'Praticiens';
+// 		$data['content'] = 'pages/praticien_v';
+// 		$this->generer_affichage($data);
+		$data['afficherPraticien'] = false;
+		$this->generer_affichage_praticien($data);
 	}
 	
 	public function afficher(){
-		
+		$data['afficherPraticien'] = true;
+		$data['praticien'] = $this->Praticien_m->getInfosPraticien($this->input->post('praticien'));
+		$this->generer_affichage_praticien($data);
 	
+	}
+	private function generer_affichage_praticien($data) {
+		$data['praticiens'] = $this->Praticien_m->getListePraticiens();
+		$data['title'] = 'Praticiens';
+		$data['content'] = 'pages/praticien_v';
+		$this->generer_affichage($data);
 	}
 	
 }

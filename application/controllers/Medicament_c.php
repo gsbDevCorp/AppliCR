@@ -10,6 +10,9 @@ class Medicament_c extends MY_Controller{
 	}
 	
 	public function index(){
+		$data['title'] = 'Consulter les médicaments';
+		$data['content'] = 'pages/medicament_v';
+		$this->generer_affichage($data);
 	
 	}
 	
