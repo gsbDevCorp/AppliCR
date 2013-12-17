@@ -45,6 +45,10 @@ html, body {
 	color: #FFF;
 }
 
+.butsPassage {
+	margin-left: 220px;
+}
+
 	/*----- Connexion_v -----*/
 
 #bloc-connexion {
@@ -120,4 +124,12 @@ html, body {
 	color: #5599EE;
 	padding: 0 10px;
 	background-color: #FFF;
+}
+	/*----- Visiteur -----*/
+	
+#visiteur ul {
+	list-style-type: none;
+}
+#visiteur ul li {
+	margin: 10px 0 10px 0;
 }

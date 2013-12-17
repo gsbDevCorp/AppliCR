@@ -12,7 +12,8 @@ class Visiteur_c extends MY_Controller {
 	 * Affichage du formulaire de recherche de visiteurs.
 	 */
 	public function index(){
-		$this->generer_affichage_visiteur();
+		$data['afficherVisiteur'] = false;
+		$this->generer_affichage_visiteur($data);
 	}
 	
 	/**
@@ -20,6 +21,7 @@ class Visiteur_c extends MY_Controller {
 	 */
 	public function afficher() {
 		$data['afficherVisiteur'] = true;
+		$data['visiteur'] = $this->Visiteur_m->getVisiteur($this->input->post('visiteur'));
 		$this->generer_affichage_visiteur($data);
 	}
 	

@@ -29,8 +29,8 @@ class Visiteur_m extends CI_Model {
 	/**
 	 * Retourne un visiteur à partir de son matricule
 	 */
-	public function getVisiteur($vis_nom) {
-		$this->db->where('vis_nom', $vis_nom);
+	public function getVisiteur($vis_matricule) {
+		$this->db->where('vis_matricule', $vis_matricule);
 		return $this->db->get('visiteur');
 	}
 	
