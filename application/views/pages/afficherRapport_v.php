@@ -25,25 +25,54 @@
 				<span class="titre">MOTIF : </span>
 				<?php if(!empty($rapport['autre_motif'])) { ?>
 						<span class="valeur_detail"><?php echo $rapport['autre_motif']; ?></span>
-				<?php }else{ ?>
-						<span class="valeur_detail"><?php echo $rapport['mo_code']; ?></span>
-				<?php }?>
+				<?php 
+						}
+						else { 
+							foreach($this->Rapport_Visite_m->getMotifRapport($rapport['mo_code'])->result_array() as $motif) {
+				?>
+						<span class="valeur_detail"><?php echo $motif['mo_libelle']; ?></span>
+				<?php 
+						}
+							}
+				?>
 			</li>
+			<?php if($rapport['rap_bilan'] != null) { ?>
 			<li><span class="titre">BILAN : </span><span class="valeur_detail"><?php echo $rapport['rap_bilan']; ?></span></li>
+			<?php
+				} 
+				if($elemPresentes->num_rows() > 0) {
+			?>
 			<li><span class="titre">Eléments présentés :</span>
 				<ul class="valeur_detail">
-					<li>TRIMYCINE</li>
-					<li>ADIMOL</li>
+					<?php 
+					foreach($elemPresentes->result_array() as $element) {
+						foreach($this->Medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
+					?>
+							<li><?php echo $medicament['med_nomcommercial']; ?></li>
+					<?php 
+						}
+					}
+					?>
 				</ul>
 			</li>
+			<?php
+				}
+				if($echantillons->num_rows() > 0) {
+			?>
 			<li><span class="titre">Echantillons :</span>
 				<ul class="valeur_detail">
-					<li>TRIMYCINE</li>
-					<li>ADIMOL</li>
-					<li>TRIMYCINE</li>
-					<li>ADIMOL</li>
+					<?php 
+					foreach($echantillons->result_array() as $element) {
+						foreach($this->Medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
+					?>
+							<li><?php echo $medicament['med_nomcommercial'].' x'.$element['off_qte']; ?></li>
+					<?php 
+						}
+					}
+					?>
 				</ul>
 			</li>
+			<?php }?>
 		</ul>
 	<?php 
 			}

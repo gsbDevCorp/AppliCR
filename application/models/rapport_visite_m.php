@@ -45,4 +45,24 @@ class Rapport_Visite_m extends CI_Model {
 		$this->db->where('rap_num', $rap_num);
 		return $this->db->get('rapport_visite');
 	}
+	
+	/**
+	 * Renvoie les identifiants des échantillons de médicaments offerts lors de la visite
+	 * 
+	 * @param int $rap_num
+	 */
+	public function getEchantillonsOfferts($rap_num) {
+		$this->db->where('rap_num', $rap_num);
+		return $this->db->get('offrir');
+	}
+	
+	/**
+	 * Renvoie le motif du rapport de visite
+	 * 
+	 * @param int $mo_code
+	 */
+	public function getMotifRapport($mo_code) {
+		$this->db->where('mo_code', $mo_code);
+		return $this->db->get('motif');
+	}
 }

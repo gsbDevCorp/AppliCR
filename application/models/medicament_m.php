@@ -18,4 +18,14 @@ class Medicament_m extends CI_Model {
 		$this->db->where('rap_num', $rap_num);
 		return $this->db->get('presenter'); 
 	}
+	
+	/**
+	 * Renvoie toutes les informations relatives à un médicament
+	 * 
+	 * @param String $med_depotlegal
+	 */
+	public function getInfosMedicament($med_depotlegal) {
+		$this->db->where('med_depotlegal', $med_depotlegal);
+		return $this->db->get('medicament');
+	}
 }

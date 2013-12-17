@@ -31,7 +31,7 @@ class Rapport_Visite_c extends MY_Controller {
 	 * Recherche des rapports de visites enregistrés entre deux dates.
 	 */
 	public function rechercher() {
-		//-- Attributs
+		//-- Attributs.
 		$dateDebut = dateToEN($this->input->post('dateDebut'));
 		$dateFin = dateToEN($this->input->post('dateFin'));
 		//-- Vérification de la complétion
@@ -44,7 +44,7 @@ class Rapport_Visite_c extends MY_Controller {
 			$data['rapports'] = $this->Rapport_Visite_m->getRapportsVisiteur($this->session->userdata('vis_matricule'));
 		}
 		else {
-			//-- Gestion de la complétion partielle du formulaire
+			//-- Gestion de la complétion partielle du formulaire.
 			if ($this->form_validation->run() == FALSE)
 				$data['rapports'] = $this->Rapport_Visite_m->getRapportsVisiteur($this->session->userdata('vis_matricule'));
 			else
@@ -61,15 +61,15 @@ class Rapport_Visite_c extends MY_Controller {
 	 * Affichage du rapport de visite sélectionné par l'utilisateur.
 	 */
 	public function afficher() {
-		//-- Récupération des informations du rapport
+		//-- Récupération des informations du rapport.
 		$data['rapports'] = $this->Rapport_Visite_m->getRapportByCode($this->session->userdata('vis_matricule'), $this->uri->segment(3));
 		
-		//-- Récupération des informations du praticien titulaire
+		//-- Récupération des informations du praticien titulaire.
 		foreach ($data['rapports']->result_array() as $rapport) {
 			$data['praticiens'] = $this->Praticien_m->getInfosPraticien($rapport['pra_num']);
 		}
 		
-		//-- Récupérations des informations du remplacant
+		//-- Récupérations des informations du remplacant.
 		foreach($data['praticiens']->result_array() as $praticien) {
 			$data['remplacants'] = $this->Praticien_m->getInfosRemplacant($rapport['rap_num']);
 		}
@@ -82,14 +82,12 @@ class Rapport_Visite_c extends MY_Controller {
 		else 
 			$data['remplacants'] = false;
 		
-		//-- Récupération des médicaments présentés lors de la visite
-		foreach($this->Medicament_m->getMedPresentes($rapport['rap_num'])->result_array() as $element) {
-			//$medicament = $this->
-			$data['elemPresentes'] += $element['med_depotlegal'];
-		}
+		//-- Récupération des médicaments présentés lors de la visite.
+		$data['elemPresentes'] = $this->Medicament_m->getMedPresentes($rapport['rap_num']);
+		///-- Récupération des échantillons distribués lors de la visite.
+		$data['echantillons'] = $this->Rapport_Visite_m->getEchantillonsOfferts($rapport['rap_num']);
 		
-		
-		//-- Génération de l'affichage
+		//-- Génération de l'affichage.
 		$data['title'] = ' Rapport de visite n°'.$this->uri->segment(3);
 		$data['content'] = 'pages/afficherRapport_v';
 		$this->generer_affichage($data);
