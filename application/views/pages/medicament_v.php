@@ -6,4 +6,5 @@
 		if (isset($afficherMedicament) && $afficherMedicament)
 			$this->load->view('pages/includes/affichageMedicament_v');
 	?>
+	
 </div>

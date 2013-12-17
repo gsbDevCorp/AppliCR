@@ -35,4 +35,5 @@ class Medicament_m extends CI_Model {
 	public function getListeMedicaments() {
 		return $this->db->get('medicament');
 	}
+
 }
