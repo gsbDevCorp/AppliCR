@@ -28,4 +28,11 @@ class Medicament_m extends CI_Model {
 		$this->db->where('med_depotlegal', $med_depotlegal);
 		return $this->db->get('medicament');
 	}
+	
+	/**
+	 * Renvoie tous les médicaments
+	 */
+	public function getListeMedicaments() {
+		return $this->db->get('medicament');
+	}
 }
