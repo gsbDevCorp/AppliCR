@@ -25,6 +25,7 @@ class Rapport_Visite_c extends MY_Controller {
 		//-- Génération des listes
 		$data['praticiens'] = $this->Praticien_m->getListePraticiens();
 		$data['motifs'] = $this->Rapport_Visite_m->getListeMotifs();
+		$data['medicaments'] = $this->Medicament_m->getListeMedicaments();
 		
 		//-- Génération de l'affichage
 		$data['title'] = 'Nouveau rapport de visite';

@@ -3,13 +3,16 @@
 /*----- Général -----*/
 
 html, body {
-	
+	font: 13px/20px normal Helvetica,Arial,sans-serif;
 }
 .erreur {
 	color: #FF0000;
 }
 .champsRequis {
 	color: #FF0000;
+}
+input, select {
+	color: #5599EE;
 }
 
 /*----- mainTemplate -----*/
@@ -128,6 +131,16 @@ html, body {
 	padding: 0 10px;
 	background-color: #FFF;
 }
+
+	/*----- Nouveau rapport-----*/
+#nouveau_rapport label {
+	width: 180px;
+	display: inline-block;
+}
+#remplacants {
+	
+}
+
 	/*----- Visiteur -----*/
 	
 #visiteur ul {

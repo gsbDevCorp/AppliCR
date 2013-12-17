@@ -46,6 +46,12 @@
 				$motif['mo_code'] => $motif['mo_libelle']
 		);
 	}
+	$dataForm['autreMotif'] = array(
+			'name' => 'autreMotif',
+			'id' => 'autreMotif',
+			'value' => set_value('autreMotif'),
+			'disabled' => 'true'
+	);
 	$dataForm['bilan'] = array(
 			'name' => 'bilan',
 			'id' => 'bilan',
@@ -53,6 +59,25 @@
 			'rows' => '5',
 			'cols' => '50'
 	);
+	
+	//-- Éléments présentés
+	$dataForm['produits'] = array(
+			'-1' => 'Choisir un médicament'
+	);
+	foreach($medicaments->result_array() as $medicament) {
+		$dataForm['produits'] += array(
+				$medicament['med_depotlegal'] => $medicament['med_nomcommercial']
+		);
+	}
+	
+	//-- Échantillons
+	$dataForm['qteEchantillon'] = array(
+			'name' => 'qteEchantillon',
+			'id' => 'qteEchantillon',
+			'value' => set_value('qteEchantillon'),
+			'size' => '2'
+	);
+	
 	//-- Boutons
 	$dataForm['submit'] = array(
 			'name' => 'sendForm',
@@ -79,15 +104,35 @@
 	echo form_label('COEFF. CONFIANCE :', 'coefConfiance');
 	echo form_input($dataForm['coefConfiance']).br();
 	echo form_label('REMPLACANT :', 'remplacants');
-	echo form_checkbox('avoirRemplacant', 'avoirRemplacant', FALSE);
-	echo form_dropdown('remplacants', $dataForm['remplacants'], '-1').br();
+	echo form_checkbox('avoirRemplacant', 'avoirRemplacant', FALSE,'onClick="selectionne(true, this.checked, \'remplacants\');"');
+	echo form_dropdown('remplacants', $dataForm['remplacants'], '-1','disabled="true", id="remplacants"').br();
 		//-- Motifs, Bilan
 	echo form_label('MOTIF<span class="champsRequis">*</span> :', 'motifs');
-	echo form_dropdown('motifs', $dataForm['motifs'], '-1').br();
-	echo form_label('BILAN<span class="champsRequis"</span> :', 'bilan');
-	echo form_textarea($dataForm['bilan']);
+	echo form_dropdown('motifs', $dataForm['motifs'], '-1', 'onChange="autreMotif(\'this.value\');"');
+	echo form_input($dataForm['autreMotif']).br();
+	echo form_label('BILAN<span class="champsRequis">*</span> :', 'bilan');
+	echo form_textarea($dataForm['bilan']).br();
+	
+		//--Éléments présentés
+	echo '<h3>Éléments présentés :</h3>';
+	echo form_label('PRODUIT  1 :', 'produit1');
+	echo form_dropdown('produit1', $dataForm['produits'], '-1').br();
+	echo form_label('PRODUIT  2 :', 'produit2');
+	echo form_dropdown('produit2', $dataForm['produits'], '-1').br();
+	
+		//-- Échantillons présentés
+	echo '<h3>Échantillons</h3>';
+	echo form_label('PRODUIT :', 'echantillon');
+	echo form_dropdown('echantillon', $dataForm['produits'], '-1');
+	echo form_input($dataForm['qteEchantillon']);
+	echo form_button('addEchantillon', '+').br().br();
+	
 		//-- Boutons
+	echo '<span class="champsRequis">*</span> : champs requis'.br().br();
+	echo '<div class="butsPassage">';
 	echo form_reset('reset', 'Annuler');
 	echo form_submit($dataForm['submit']);
+	echo '</div>'.br();
+	
 	form_close();
 ?>

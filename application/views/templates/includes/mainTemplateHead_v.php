@@ -4,6 +4,8 @@
 		<title><?php echo $title; ?> | AppliCR</title>
 		<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 		<link href="<?php echo(CSS.'mainStyle.css'); ?>" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="<?php echo JS; ?>functions.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 	</head>
 	
 	<body>
