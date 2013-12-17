@@ -33,4 +33,11 @@ class Visiteur_m extends CI_Model {
 		$this->db->where('vis_nom', $vis_nom);
 		return $this->db->get('visiteur');
 	}
+	
+	/**
+	 * Retourne une liste de tous les visiteurs
+	 */
+	public function getListeVisiteurs() {
+		return $this->db->get('visiteur');
+	}
 }
