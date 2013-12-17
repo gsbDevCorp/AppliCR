@@ -19,9 +19,14 @@ class Rapport_Visite_c extends MY_Controller {
 	}
 	
 	/**
-	 * Création d'un nouveau rapport de visite.
+	 * Formulaire de création d'un nouveau rapport de visite.
 	 */
 	public function nouveau() {
+		//-- Génération des listes
+		$data['praticiens'] = $this->Praticien_m->getListePraticiens();
+		$data['motifs'] = $this->Rapport_Visite_m->getListeMotifs();
+		
+		//-- Génération de l'affichage
 		$data['title'] = 'Nouveau rapport de visite';
 		$data['content'] = 'pages/nouveauRapport_v';
 		$this->generer_affichage($data);

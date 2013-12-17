@@ -65,4 +65,11 @@ class Rapport_Visite_m extends CI_Model {
 		$this->db->where('mo_code', $mo_code);
 		return $this->db->get('motif');
 	}
+	
+	/**
+	 * Renvoie la liste de tous les motifs connus
+	 */
+	public function getListeMotifs() {
+		return $this->db->get('motif');
+	}
 }

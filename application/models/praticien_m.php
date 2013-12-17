@@ -29,4 +29,11 @@ class Praticien_m extends CI_Model {
 		$this->db->where('rap_num', $rap_num);
 		return $this->db->get('remplacer');
 	}
+	
+	/**
+	 * Renvoie la liste de tous les praticiens connus
+	 */
+	public function getListePraticiens() {
+		return $this->db->get('praticien');
+	}
 }
