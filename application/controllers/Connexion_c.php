@@ -39,7 +39,7 @@ class Connexion_c extends MY_Controller {
 			
 			if (!$data['erreurCombinaison']) {
 				//-- Création de la session et redirection
-				$visiteur = $this->Visiteur_m->getVisiteur($this->input->post('identifiant'));
+				$visiteur = $this->Visiteur_m->getVisiteurByNom($this->input->post('identifiant'));
 				foreach($visiteur->result_array() as $dataVisiteur) {
 					$session = array(
 						'vis_matricule' => $dataVisiteur['vis_matricule'],
