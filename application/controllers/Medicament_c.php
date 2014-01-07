@@ -19,7 +19,7 @@ class Medicament_c extends MY_Controller{
 	}
 	
 	public function afficher(){
-		$data['afficherPraticien'] = true;
+		$data['afficherMedicament'] = true;
 		$data['medicament'] = $this->Medicament_m->getInfosMedicament($this->input->post('medicament'));
 		$this->generer_affichage_medicament($data);
 	
