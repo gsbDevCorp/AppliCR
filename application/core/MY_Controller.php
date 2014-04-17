@@ -24,6 +24,14 @@ class MY_Controller extends CI_Controller {
 	}
 	
 	/**
+	 * Empeche le retour à l'écran de connexion pour un visiteur déjà connecté
+	 */
+	function bloqueRetour() {
+		if($this->est_connecte())
+			redirect('rapport_visite_c', 'refresh');
+	}
+	
+	/**
 	 * Gestion de l'affichage
 	 * @param array $data
 	 */

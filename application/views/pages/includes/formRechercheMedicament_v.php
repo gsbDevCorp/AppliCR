@@ -18,7 +18,7 @@
 
 //Affichage du formulaire
 
-	echo form_open("Medicament_c/afficher");
+	echo form_open("medicament_c/afficher");
 	//Formulaire
 	echo form_dropdown('medicament', $dataForm['medicament'], '-1');
 	echo form_submit($dataForm['submit']);

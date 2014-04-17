@@ -18,7 +18,7 @@
 
 //Affichage du formulaire
 
-	echo form_open("Praticien_c/afficher");
+	echo form_open("praticien_c/afficher");
 	//Formulaire
 	echo form_dropdown('praticien', $dataForm['praticien'], '-1');
 	echo form_submit($dataForm['submit']);

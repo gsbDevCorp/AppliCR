@@ -8,6 +8,14 @@ html, body {
 .erreur {
 	color: #FF0000;
 }
+.success {
+	background-color: rgb(235,248,164);
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #E9F1FE;
+	color: #000;
+	font-size: 1.2em;
+}
 .champsRequis {
 	color: #FF0000;
 }

@@ -13,6 +13,7 @@ class Rapport_Visite_m extends CI_Model {
 	 * Renvoie tous les rapports de visite saisis par le visiteur.
 	 * 
 	 * @param String $vis_matricule
+	 * @return liste des rapports de visite
 	 */
 	public function getRapportsVisiteur($vis_matricule) {
 		$this->db->where('vis_matricule', $vis_matricule);
@@ -26,6 +27,7 @@ class Rapport_Visite_m extends CI_Model {
 	 * @param String $vis_matricule
 	 * @param date $dateDebut
 	 * @param date $dateFin
+	 * @return liste des rapports de visite
 	 */
 	public function getRapportsLimites($vis_matricule, $dateDebut, $dateFin) {
 		$this->db->where('vis_matricule', $vis_matricule);
@@ -39,6 +41,7 @@ class Rapport_Visite_m extends CI_Model {
 	 * 
 	 * @param String $vis_matricule
 	 * @param int $rap_num
+	 * @return rapport de visite
 	 */
 	public function getRapportByCode($vis_matricule, $rap_num) {
 		$this->db->where('vis_matricule', $vis_matricule);
@@ -50,6 +53,7 @@ class Rapport_Visite_m extends CI_Model {
 	 * Renvoie les identifiants des échantillons de médicaments offerts lors de la visite
 	 * 
 	 * @param int $rap_num
+	 * @return liste d'identifiants des échantillons
 	 */
 	public function getEchantillonsOfferts($rap_num) {
 		$this->db->where('rap_num', $rap_num);
@@ -60,6 +64,7 @@ class Rapport_Visite_m extends CI_Model {
 	 * Renvoie le motif du rapport de visite
 	 * 
 	 * @param int $mo_code
+	 * @return String
 	 */
 	public function getMotifRapport($mo_code) {
 		$this->db->where('mo_code', $mo_code);
@@ -68,8 +73,19 @@ class Rapport_Visite_m extends CI_Model {
 	
 	/**
 	 * Renvoie la liste de tous les motifs connus
+	 * 
+	 * @return liste des motifs connus
 	 */
 	public function getListeMotifs() {
 		return $this->db->get('motif');
+	}
+	
+	/**
+	 * Enregistre un nouveau rapport de visite
+	 * 
+	 * @param liste des attributs à insérer
+	 */
+	public function enregistrerRapport($listeAttributs) {
+		$this->db->insert('rapport_visite', $listeAttributs);
 	}
 }

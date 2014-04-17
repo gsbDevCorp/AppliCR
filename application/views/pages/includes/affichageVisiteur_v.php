@@ -11,6 +11,5 @@
 		<div class="butsPassage">
 <?php 
 	}
-	$this->load->view('pages/includes/formPassageVisiteur_v');
 ?>
 		</div>

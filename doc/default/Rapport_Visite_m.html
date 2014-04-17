@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Rapport_Visite_m</title>
+			<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Rapport_Visite_m</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Classe d'accès aux rapports de visite.</p>
+		<p class="notes">
+			Located in <a class="field" href="_models---rapport_visite_m.php.html">/models/rapport_visite_m.php</a> (line <span class="field">6</span>)
+		</p>
+		
+				
+		<pre>CI_Model
+   |
+   --Rapport_Visite_m</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																														
+				<div class="method-definition">
+											<span class="method-result">Rapport_Visite_m</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#enregistrerRapport" title="details" class="method-name">enregistrerRapport</a>
+											(<span class="var-type">liste</span>&nbsp;<span class="var-name">$listeAttributs</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">liste</span>
+										<a href="#getEchantillonsOfferts" title="details" class="method-name">getEchantillonsOfferts</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$rap_num</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">liste</span>
+										<a href="#getListeMotifs" title="details" class="method-name">getListeMotifs</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">String</span>
+										<a href="#getMotifRapport" title="details" class="method-name">getMotifRapport</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$mo_code</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">rapport</span>
+										<a href="#getRapportByCode" title="details" class="method-name">getRapportByCode</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$rap_num</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">liste</span>
+										<a href="#getRapportsLimites" title="details" class="method-name">getRapportsLimites</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>, <span class="var-type">date</span>&nbsp;<span class="var-name">$dateDebut</span>, <span class="var-type">date</span>&nbsp;<span class="var-name">$dateFin</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">liste</span>
+										<a href="#getRapportsVisiteur" title="details" class="method-name">getRapportsVisiteur</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">8</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Rapport_Visite_m</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenregistrerRapport" id="enregistrerRapport"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">enregistrerRapport</span> (line <span class="line-number">88</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enregistre un nouveau rapport de visite</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enregistrerRapport
+		</span>
+					(<span class="var-type">liste</span>&nbsp;<span class="var-name">$listeAttributs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">liste</span>
+				<span class="var-name">$listeAttributs</span><span class="var-description">: des attributs à insérer</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetEchantillonsOfferts" id="getEchantillonsOfferts"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEchantillonsOfferts</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie les identifiants des échantillons de médicaments offerts lors de la visite</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> d'identifiants des échantillons</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">liste</span>
+		<span class="method-name">
+			getEchantillonsOfferts
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$rap_num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$rap_num</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetListeMotifs" id="getListeMotifs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getListeMotifs</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie la liste de tous les motifs connus</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> des motifs connus</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">liste</span>
+		<span class="method-name">
+			getListeMotifs
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMotifRapport" id="getMotifRapport"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMotifRapport</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie le motif du rapport de visite</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">String</span>
+		<span class="method-name">
+			getMotifRapport
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$mo_code</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$mo_code</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRapportByCode" id="getRapportByCode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRapportByCode</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie le rapport de visite demandé par le visiteur</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> de visite</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">rapport</span>
+		<span class="method-name">
+			getRapportByCode
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$rap_num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$vis_matricule</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$rap_num</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRapportsLimites" id="getRapportsLimites"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRapportsLimites</span> (line <span class="line-number">32</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie tous les rapports de visite compris entre les deux dates saisies par le visiteur</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> des rapports de visite</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">liste</span>
+		<span class="method-name">
+			getRapportsLimites
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>, <span class="var-type">date</span>&nbsp;<span class="var-name">$dateDebut</span>, <span class="var-type">date</span>&nbsp;<span class="var-name">$dateFin</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$vis_matricule</span>			</li>
+					<li>
+				<span class="var-type">date</span>
+				<span class="var-name">$dateDebut</span>			</li>
+					<li>
+				<span class="var-type">date</span>
+				<span class="var-name">$dateFin</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRapportsVisiteur" id="getRapportsVisiteur"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRapportsVisiteur</span> (line <span class="line-number">18</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renvoie tous les rapports de visite saisis par le visiteur.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> des rapports de visite</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">liste</span>
+		<span class="method-name">
+			getRapportsVisiteur
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$vis_matricule</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$vis_matricule</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 16 Apr 2014 14:46:01 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>

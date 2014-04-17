@@ -6,11 +6,13 @@
 	$dataForm['dateRapport'] = array(
 			'name' => 'dateRapport',
 			'id' => 'dateRapport',
-			'value' => set_value('dateRapport')
+			'disabled' => 'disabled',
+			'value' => date("d-m-Y")
 	);
 	$dataForm['dateVisite'] = array(
 			'name' => 'dateVisite',
 			'id' => 'dateVisite',
+			'placeholder' => 'jj-mm-aaaa',
 			'value' => set_value('dateVisite')
 	);
 	
@@ -50,12 +52,13 @@
 			'name' => 'autreMotif',
 			'id' => 'autreMotif',
 			'value' => set_value('autreMotif'),
+			'placeholder' => 'Préciser un autre motif',
 			'disabled' => 'true'
 	);
 	$dataForm['bilan'] = array(
 			'name' => 'bilan',
 			'id' => 'bilan',
-			'value' => set_value('dateVisite'),
+			'value' => set_value('bilan'),
 			'rows' => '5',
 			'cols' => '50'
 	);
@@ -70,29 +73,20 @@
 		);
 	}
 	
-	//-- Échantillons
-	$dataForm['qteEchantillon'] = array(
-			'name' => 'qteEchantillon',
-			'id' => 'qteEchantillon',
-			'value' => set_value('qteEchantillon'),
-			'size' => '2'
-	);
-	
 	//-- Boutons
 	$dataForm['submit'] = array(
 			'name' => 'sendForm',
 			'id' => 'sendForm',
-			'value' => 'Valider',
-			'disabled' => 'disabled'
+			'value' => 'Valider'
 	);
 
 //----- Affichage du formulaire
 
-	echo form_open("connexion_c/valider");
+	echo form_open("rapport_visite_c/enregistrer");
 	//-- Gestion des erreurs
 	echo validation_errors('<div class="erreur">', '</div>').br();
-	if (isset($erreurCombinaison) && $erreurCombinaison)
-		echo '<div class="erreur">Erreur dans la combinaison Identifiant / Mot de passe.</div>'.br();
+	if(isset($traitement) && $traitement)
+		echo '<div class="success">Le rapport a bien été enregistré</div>'.br();
 	//-- Formulaire
 		//-- Dates
 	echo form_label('DATE DU RAPPORT :','dateRapport');
@@ -116,17 +110,8 @@
 	
 		//--Éléments présentés
 	echo '<h3>Éléments présentés :</h3>';
-	echo form_label('PRODUIT  1 :', 'produit1');
-	echo form_dropdown('produit1', $dataForm['produits'], '-1').br();
-	echo form_label('PRODUIT  2 :', 'produit2');
-	echo form_dropdown('produit2', $dataForm['produits'], '-1').br();
-	
-		//-- Échantillons présentés
-	echo '<h3>Échantillons</h3>';
-	echo form_label('PRODUIT :', 'echantillon');
-	echo form_dropdown('echantillon', $dataForm['produits'], '-1');
-	echo form_input($dataForm['qteEchantillon']);
-	echo form_button('addEchantillon', '+', 'onClick="ajouterEchantillon();"').br().br();
+	echo form_label('PRODUIT :', 'produit');
+	echo form_dropdown('produit', $dataForm['produits'], '-1').br();
 	
 		//-- Boutons
 	echo '<span class="champsRequis">*</span> : champs requis'.br().br();

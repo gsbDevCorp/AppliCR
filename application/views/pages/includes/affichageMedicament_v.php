@@ -13,7 +13,6 @@
 		<div class="butsPassage">
 <?php 
 	}
-	$this->load->view('pages/includes/formPassageMedicament_v');
 	
 ?>
 		</div>

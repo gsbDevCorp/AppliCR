@@ -28,7 +28,7 @@
 				<?php 
 						}
 						else { 
-							foreach($this->Rapport_Visite_m->getMotifRapport($rapport['mo_code'])->result_array() as $motif) {
+							foreach($this->rapport_visite_m->getMotifRapport($rapport['mo_code'])->result_array() as $motif) {
 				?>
 						<span class="valeur_detail"><?php echo $motif['mo_libelle']; ?></span>
 				<?php 
@@ -46,7 +46,7 @@
 				<ul class="valeur_detail">
 					<?php 
 					foreach($elemPresentes->result_array() as $element) {
-						foreach($this->Medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
+						foreach($this->medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
 					?>
 							<li><?php echo $medicament['med_nomcommercial']; ?></li>
 					<?php 
@@ -63,7 +63,7 @@
 				<ul class="valeur_detail">
 					<?php 
 					foreach($echantillons->result_array() as $element) {
-						foreach($this->Medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
+						foreach($this->medicament_m->getInfosMedicament($element['med_depotlegal'])->result_array() as $medicament) {
 					?>
 							<li><?php echo $medicament['med_nomcommercial'].' x'.$element['off_qte']; ?></li>
 					<?php 

@@ -44,7 +44,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 | These modes are for an easy Assets path definition.
 |
 */
-define('ASSETS','http://localhost/AppliCR/assets/');
+define('ASSETS','http://localhost/public/AppliCR/assets/');
 define('IMG', ASSETS.'img/');
 define('CSS', ASSETS.'css/');
 define('JS', ASSETS.'js/');

@@ -13,6 +13,5 @@
 		<div class="butsPassage">
 <?php 
 	}
-	$this->load->view('pages/includes/formPassagePraticien_v');
 ?>
 		</div>
