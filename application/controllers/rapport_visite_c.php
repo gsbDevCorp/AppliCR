@@ -186,12 +186,12 @@ class Rapport_Visite_c extends MY_Controller {
 		$dateRapport = new DateTime(date('Y-m-d'));
 		$dateVisite = new DateTime(dateToEN($date));
 		$interval = $dateRapport->diff($dateVisite);
-		$interval = $interval->format('%d');
-		/*if($interval > 0) {
+		$interval = $interval->format('%R%d');
+		if($interval > 0) {
 			$this->form_validation->set_message('dateVisite_check', 'Le champ "%s" est invalide (ne peut pas être dans le futur)');
 			return false;
 		}
-		else*/ 
+		else
 			return true;
 	}
 	
